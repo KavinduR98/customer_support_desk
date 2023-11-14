@@ -1,0 +1,65 @@
+* {
+    font-family: "Open Sans", sans-serif;
+}
+.bg-image {
+    background-image: url("images/bg-01.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.login-title {
+    font-weight: 600;
+}
+
+.txtforget {
+    text-decoration: none;
+    color: rgb(38, 144, 206) !important;
+}
+
+label {
+    font-size: 15px;
+}
+
+input {
+    width: 100%;
+}
+
+.small,
+small {
+    font-size: 0.87em !important;
+}
+
+a {
+    color: #7c2cdd !important   ;
+    font-weight: 500;
+}
+
+.bg-purple {
+    background-color: #7c2cdd !important;
+    border: 1px solid #7c2cdd !important;
+}
+
+.blur {
+    background-color: rgb(255 255 255 / 0.8);
+    backdrop-filter: blur(10px);
+}
+
+@media (min-width: 1200px) {
+    .col-30 {
+        width: 30% !important;
+    }
+}
+.form-control:focus {
+    border-color: #7c2cdd54 !important;
+    box-shadow: 0 0 0 0.25rem rgba(152, 12, 233, 0.25) !important;
+}
+
+.img-w {
+    width: 250px;
+}
+
+@media (max-width: 400px) {
+    .img-w {
+        width: 120px;
+    }
+}

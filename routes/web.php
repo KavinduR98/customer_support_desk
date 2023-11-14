@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CustomerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('customer.view_customer_ticket');
 });
+
+Route::get('/view_agent_login', function () {
+    return view('agent.login');
+});
+
+Route::post('/submitForm', [LoginController::class,'loginForm']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/agent_dashboard', function () {
+    return view('agent.view_agent_dashboard');
+});
+
+//customer-ticket
+Route::post('/submit_ticket', [CustomerController::class, 'save_data']);
+Route::get('/check_ticket_info', [CustomerController::class, 'check_ticket_info']);
