@@ -12,7 +12,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        return view('admin.admin_login');
+        return view('customer.view_customer_ticket');
     }
 
 

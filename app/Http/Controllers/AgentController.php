@@ -90,9 +90,10 @@ class AgentController extends Controller
         try{
 
             $replyData = DB::table("ticket_replies")
-                        ->select('*')
-                        ->where('ticket_id', $id)
-                        ->first();
+                            ->select('ticket_replies.reply', 'tickets.status')
+                            ->join('tickets', 'tickets.id', '=', 'ticket_replies.ticket_id')
+                            ->where('ticket_replies.ticket_id', $id)
+                            ->first();
 
             return response()->json(["status" => "success", "data" => $replyData]);
 

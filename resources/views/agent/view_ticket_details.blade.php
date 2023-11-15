@@ -37,12 +37,12 @@
                             <textarea class="form-control mt-3"  name="txtReply" id="txtReply" cols="30" rows="10" onchange="save_reply(event, {{ $data->id }});"></textarea>
                         </div>
                         <div class="col-md-2">
-                            <div class="dropdown" id="btnaction">
+                            <div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
                                     data-mdb-toggle="dropdown" aria-expanded="false">
                                     Action
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="changeStatusBtn">
                                     <li><a class="dropdown-item" id="pending" href="#">Pending</a></li>
                                     <li><a class="dropdown-item" id="inProgress" href="#">In Progress</a></li>
                                     <li><a class="dropdown-item" id="resolved" href="#">Resolved</a></li>

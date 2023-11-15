@@ -38,6 +38,7 @@ function pending(id) {
             console.log(response)
             if (response.status == "success") {
                 toastr.success('Pending mode!', 'Success');
+                location.reload();
             }
         }, error: function (data) {
             toastr.error('something went wrong!', 'Error');
@@ -57,6 +58,7 @@ function inProgress(id) {
             console.log(response)
             if (response.status == "success") {
                 toastr.success('In progress mode!', 'Success');
+                location.reload();
             }
         }, error: function (data) {
             toastr.error('something went wrong!', 'Error');
@@ -77,6 +79,7 @@ function resolved(id) {
             console.log(response)
             if (response.status == "success") {
                 toastr.success('Resolved mode!', 'Success');
+                location.reload();
             }
         }, error: function (data) {
             toastr.error('something went wrong!', 'Error');
@@ -104,6 +107,19 @@ function viewReply(){
 
             if (response.status == "success") {
                 $('#txtReply').val(response.data.reply); 
+
+                var status = response.data.status;
+
+                if (status == 0) {
+                    $('#dropdownMenuButton').text("Pending");
+                } else if (status == 1) {
+                    $('#dropdownMenuButton').text("In Progress");
+                } else if (status == 2) {
+                    $('#dropdownMenuButton').text("Resolved");
+                } else {
+                    toastr.error('Invalid status!', 'Error');
+                }
+
             } else {
                 toastr.error('Something went wrong!', 'Error');
             }

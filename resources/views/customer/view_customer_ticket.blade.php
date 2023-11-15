@@ -35,7 +35,7 @@
                             </form>
                         </div>
                         <div class="row mt-5" id="divCustomerTicket">
-                            <div class="col-md-12 col-sm-12">
+                            <div class="table-responsive">
                                 <table class="table table-striped" id="tblCustomerTicket" >
                                     <thead>
                                         <tr>

@@ -110,6 +110,9 @@
                 <li><a class="active" href="/view_agent_login" style="text-decoration: none;">Agent Login</a></li>
                 @endguest
                 @auth 
+                <li><a href="/agent_dashboard" style="text-decoration: none;">Dashboard</a></li>
+                @endauth
+                @auth 
                 <li><a href="/logout" style="text-decoration: none;"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a></li>
                 @endauth
             </ul>
