@@ -90,12 +90,12 @@ function save() {
                 });
                 hideModal();
             } else {
-                console.log("Error");
+                toastr.error('Ticket submitted incompleted!', 'Error');
             }
 
         },
         error: function (error) {
-            console.log(error);
+            toastr.error('something went wrong!', 'Error');
         },
         complete: function () {
 
@@ -137,7 +137,7 @@ function get_ticket_info() {
                     data.push({
                         "ref_no": refNo,
                         "name": name,
-                        "aprovestate": '<span class="badge badge-pill badge-info"><i class="fa fa-clock mr-2" > Pending </span>',  
+                        "aprovestate": '<span class="badge badge-pill badge-info"><i class="fa fa-clock mr-2" ></i> Pending </span>',  
                         
                     });
                 }
@@ -145,7 +145,7 @@ function get_ticket_info() {
                     data.push({
                         "ref_no": refNo,
                         "name": name,
-                        "aprovestate": '<span class="badge badge-pill badge-primary"><i class="fa fa-edit mr-2" ></i> In Progress</span>',
+                        "aprovestate": '<span class="badge badge-pill badge-primary"><i class="fa fa-hourglass-half mr-2" ></i> In Progress</span>',
                         
                     });
                 }
@@ -153,7 +153,7 @@ function get_ticket_info() {
                     data.push({
                         "ref_no": refNo,
                         "name": name,
-                        "aprovestate": '<span class="badge badge-pill badge-success"><i class="ti-check-box mr-2" ></i> Approved</span>',
+                        "aprovestate": '<span class="badge badge-pill badge-success"><i class="fa fa-calendar-check mr-2" ></i> Resolved</span>',
                     });
                 }
 

@@ -41,6 +41,9 @@
     {{-- @include('sweetalert::alert') --}}
     {{-- PDFMake --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.js" integrity="sha512-rn5JpU98RtYVMtZeQJfzmJ67rl4/dqDpGZ393z5f9WMYHXEU4+8Stm/PQAma2gbsLbpClmUHJzT0DaG32OmEyQ==" crossorigin="anonymous"></script>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 <body>

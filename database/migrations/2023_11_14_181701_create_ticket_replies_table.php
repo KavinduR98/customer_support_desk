@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('ticket_id', 25);
             $table->foreign('ticket_id')->references('id')->on('tickets')->onDelete('cascade');
             $table->string('agent_id', 25);
-            $table->string('reply');
+            $table->longText('reply');
             $table->timestamps();
         });
     }

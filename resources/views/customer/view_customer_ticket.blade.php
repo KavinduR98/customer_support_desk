@@ -5,7 +5,7 @@
 <head>
     <style>
         .card{
-            height: 60vh;
+            height: 75vh;
         }
     </style>
 </head>

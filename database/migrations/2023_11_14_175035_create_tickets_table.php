@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('reference_number',200);
             $table->string('customer_name',250);
-            $table->string('problem');
+            $table->longText('problem');
             $table->string('email',150);
             $table->string('phone_number',20);
 
