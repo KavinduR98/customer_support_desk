@@ -85,7 +85,7 @@ function save() {
                     positionClass: 'toast-top-right',
                     // Redirect 
                     onHidden: function() {
-                        window.location.reload();
+                        // window.location.reload();
                     }
                 });
                 hideModal();

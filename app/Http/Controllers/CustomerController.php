@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use Exception;
 use DB;
+use Mail;
 use Illuminate\Support\Str; 
+use App\Mail\TicketSubmitted;
 
 class CustomerController extends Controller
 {
@@ -20,11 +22,12 @@ class CustomerController extends Controller
     {
 
         try {
+            $email = $request->get('customer_email');
 
             $ticket = new Ticket();
             $ticket->customer_name = $request->get('customer_name');
             $ticket->problem = $request->get('customer_problem');
-            $ticket->email = $request->get('customer_email');
+            $ticket->email = $email;
             $ticket->phone_number = $request->get('customer_phone');
             $ticket->status = 0;
 
@@ -33,6 +36,13 @@ class CustomerController extends Controller
 
             $ticket->reference_number = $uuid;
 
+            $ticketReference  = [
+                'title' => 'Mail from Customer Support Desk',
+                'body' => 'Your ticket reference number is: ' . $uuid,
+            ];
+
+            Mail::to($email)->send(new TicketSubmitted($ticketReference));
+            
             if($ticket->save()) {
                 return response()->json(["status" => "saved", "data" => $ticket]);
             } else {
